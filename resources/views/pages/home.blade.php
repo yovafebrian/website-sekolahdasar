@@ -2,16 +2,18 @@
 @section('content')
 <div class="pt-35 px-6">
     <!-- Jumbotron -->
-    @include('components.jumbotron')
+    <section class="mb-10 text-center opacity-0 transform translate-y-10 transition-all duration-1000 scroll-reveal">
+        @include('components.jumbotron')
+    </section>
 
     <!-- Sambutan Kepala Sekolah dengan animasi Tailwind -->
     <section id="tentang" class="py-16 md:py-24 bg-gray-100">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row  items-center">
+            <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 opacity-0 transform translate-y-10 transition-all duration-1000 scroll-reveal">
-                    <img src="{{ asset('images/kegiatan1.png') }}" class="ml-40 rounded-lg"
+                    <img src="{{ asset('images/kegiatan1.png') }}" class="ml-0 md:ml-40 rounded-lg"
                          alt="Sambutan Kepala Sekolah" 
-                         class="rounded-lg shadow-lg w-full max-w-md">
+                         class="rounded-lg shadow-lg w-full max-w-xs md:max-w-md">
                 </div>
                 <div class="md:w-1/2 opacity-0 transform translate-y-10 transition-all duration-1000 scroll-reveal">
                     <h2 class="text-3xl font-bold mb-6">Sambutan Kepala Sekolah</h2>
@@ -32,7 +34,7 @@
         </div>
     </section>
 
-    <!-- Foto Kegiatan Terbaru (Slider) dengan animasi Tailwind -->
+    <!-- Foto Kegiatan Terbaru -->
     <section class="mb-10 text-center opacity-0 transform translate-y-10 transition-all duration-1000 scroll-reveal">
         @include('components.imageslider')
     </section>

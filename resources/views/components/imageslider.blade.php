@@ -17,21 +17,18 @@
 <body class="bg-gray-100">
 
     @php
-        $images = [
-            asset('images/kegiatan1.png'),
-            asset('images/kegiatan2.png'),
-            asset('images/kegiatan3.png'),
-            asset('images/kegiatan4.png')
-        ];
+        use App\Models\Kegiatan;
+        $kegiatan = Kegiatan::all();
     @endphp
 
     <div class="container mx-auto mt-10 p-4">
         <h2 class="text-center text-3xl font-bold text-blue-600 mb-6">Foto Kegiatan Terbaru</h2>
 
         <div class="image-slider">
-            @foreach($images as $index => $img)
+            @foreach($kegiatan as $item)
                 <div class="p-8">
-                    <img src="{{ $img }}" alt="Slide {{ $index + 1 }}" class="w-full h-full object-cover rounded-lg shadow-lg">
+                    <img src="{{ asset('images/' . $item->gambar) }}" alt="{{ $item->judul }}" class="w-full h-full object-cover rounded-lg shadow-lg" onerror="console.error('Error loading image: {{ asset('images/' . $item->gambar) }}')">
+                    <script>console.log('Image path: {{ asset('images/' . $item->gambar) }}');</script>
                 </div>
             @endforeach
         </div>
