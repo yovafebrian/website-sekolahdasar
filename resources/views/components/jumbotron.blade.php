@@ -15,6 +15,7 @@
         asset('images/profile.jpeg'),
         asset('images/walkot.jpeg'),
         asset('images/walikota2.png'),
+        asset('images/walikota.jpg'),
         asset('images/presiden.jpeg')
     ];
 @endphp

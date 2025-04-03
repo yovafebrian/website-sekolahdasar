@@ -18,8 +18,7 @@
                 <div class="md:w-1/2 opacity-0 transform translate-y-10 transition-all duration-1000 scroll-reveal">
                     <h2 class="text-3xl font-bold mb-6">Sambutan Kepala Sekolah</h2>
                     <p class="mb-4">
-                        Sekolah Prestasi didirikan pada tahun 2005 dengan visi menjadi lembaga pendidikan terkemuka yang
-                        menghasilkan lulusan berkualitas, berkarakter, dan siap menghadapi tantangan global.
+                        Kehadiran website SDN Bulustalan diharapkan dapat memudahkan penyampaian informasi secara terbuka mengenai kegiatan sekolah yang meliputi kegiatan kurikulum, kegiatan kesiswaan, kegiatan sarana-prasarana, dan kegiatan humas serta kegiatan sekolah lainnya kepada seluruh warga sekolah, alumni, masyarakat, dan instansi-instansi lain yang terkait. Kehadiran website ini merupakan langkah awal untuk peningkatan dan pengembangan kegiatan sekolah yang senantiasa terus dipupuk dan didorong bagi kemajuan sekolah.
                     </p>
                     <p class="mb-4">
                         Dengan kurikulum yang komprehensif dan tenaga pengajar profesional, kami berkomitmen untuk memberikan

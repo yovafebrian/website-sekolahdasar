@@ -27,7 +27,7 @@
         <div class="image-slider">
             @foreach($kegiatan as $item)
                 <div class="p-8">
-                    <img src="{{ asset('images/' . $item->gambar) }}" alt="{{ $item->judul }}" class="w-full h-full object-cover rounded-lg shadow-lg" onerror="console.error('Error loading image: {{ asset('images/' . $item->gambar) }}')">
+                    <img src="{{ asset('storage/' . $item->gambar) }}" alt="{{ $item->judul }}" class="w-full h-full object-cover rounded-lg shadow-lg" onerror="console.error('Error loading image: {{ asset('images/' . $item->gambar) }}')">
                     <script>console.log('Image path: {{ asset('images/' . $item->gambar) }}');</script>
                 </div>
             @endforeach

@@ -6,61 +6,163 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>SD NEGERI BULUSTALAN</title>
     @vite('resources/css/app.css')
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuButton = document.querySelector('#menu-button');
-            const menu = document.querySelector('#menu');
-
-            menuButton.addEventListener('click', function() {
-                menu.classList.toggle('hidden');
-                menu.classList.toggle('flex');
-            });
-        });
-    </script>
 </head>
 <body class="bg-gray-100">
 
     <!-- Navbar -->
     <nav class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md shadow-md z-50">
         <div class="container mx-auto flex justify-between items-center p-4">
-            <a href="/" class="text-2xl font-bold text-blue-600 transition-transform duration-300 hover:scale-105">
+            <!-- Logo -->
+            <a href="/" class="flex items-center text-2xl font-bold text-blue-600 transition-all duration-300 hover:scale-[1.02]">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-2 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
                 SDN BULUSTALAN
             </a>
             
-            <!-- Tombol Menu Mobile -->
-            <button id="menu-button" class="block md:hidden text-gray-700 focus:outline-none">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            <!-- Mobile Menu Button -->
+            <button id="menu-button" class="md:hidden text-gray-700 focus:outline-none" aria-expanded="false" aria-controls="menu">
+                <svg id="menu-icon" class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+                <svg id="close-icon" class="w-8 h-8 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                 </svg>
             </button>
 
-            <!-- Menu -->
-            <ul id="menu" class="hidden flex-col md:flex md:flex-row md:space-x-6 absolute md:relative top-full left-0 w-full md:w-auto bg-white md:bg-transparent shadow-lg md:shadow-none md:static transition-all duration-300">
-                <li><a href="/" class="block py-2 px-4 text-gray-700 hover:text-blue-500">Beranda</a></li>
-                <li><a href="/kegiatan" class="block py-2 px-4 text-gray-700 hover:text-blue-500">Kegiatan</a></li>
+            <!-- Desktop Menu -->
+            <div id="menu" class="hidden md:flex items-center">
+                <ul class="flex flex-col md:flex-row md:space-x-6 absolute md:relative top-full left-0 w-full md:w-auto bg-white md:bg-transparent shadow-lg md:shadow-none md:static">
+                    <li><a href="/" class="block py-2 px-4 text-gray-700 hover:text-blue-500 transition-colors">Beranda</a></li>
+                    <li><a href="/kegiatan" class="block py-2 px-4 text-gray-700 hover:text-blue-500 transition-colors">Kegiatan</a></li>
 
-                <!-- Dropdown Profile -->
-                <li class="relative group">
-                    <a href="#" class="block py-2 px-4 text-gray-700 hover:text-blue-500">Profile ▾</a>
-                    <ul class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                        <li><a href="/profile" class="block px-4 py-2 text-gray-700 hover:bg-blue-100">Profile Sekolah</a></li>
-                        <li><a href="https://instagram.com" class="block px-4 py-2 text-gray-700 hover:bg-blue-100">Instagram</a></li>
-                        <li><a href="/guru-karyawan" class="block px-4 py-2 text-gray-700 hover:bg-blue-100">Guru & Karyawan</a></li>
-                    </ul>
-                </li>
+                    <!-- Profile Dropdown -->
+                    <li class="relative group">
+                        <button class="flex items-center py-2 px-4 text-gray-700 hover:text-blue-500 transition-colors">
+                            Profile
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <ul class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 -translate-y-2">
+                            <li><a href="/profile" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 transition-colors">Profile Sekolah</a></li>
+                            <li><a href="https://instagram.com" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 transition-colors">Instagram</a></li>
+                            <li><a href="/guru-karyawan" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 transition-colors">Guru & Karyawan</a></li>
+                        </ul>
+                    </li>
 
-                <!-- Dropdown Akademik -->
-                <li class="relative group">
-                    <a href="/akademik" class="block py-2 px-4 text-gray-700 hover:text-blue-500">Akademik ▾</a>
-                    <ul class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
-                        <li><a href="/tugas-daring" class="block px-4 py-2 text-gray-700 hover:bg-blue-100">Tugas Daring</a></li>
-                    </ul>
-                </li>
+                    <!-- Akademik Dropdown -->
+                    <li class="relative group">
+                        <button class="flex items-center py-2 px-4 text-gray-700 hover:text-blue-500 transition-colors">
+                            Akademik
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <ul class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 -translate-y-2">
+                            <li><a href="/tugas-daring" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 transition-colors">Tugas Daring</a></li>
+                        </ul>
+                        
+                    </li>
 
-                <li><a href="/kontak" class="block py-2 px-4 text-gray-700 hover:text-blue-500">Kontak</a></li>
-            </ul>
+                    <!-- PPDB Dropdown -->
+                    <li class="relative group">
+                        <button class="flex items-center py-2 px-4 text-gray-700 hover:text-blue-500 transition-colors">
+                            PPDB
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <ul class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 -translate-y-2">
+                            <li><a href="https://arsip.siap-ppdb.com/" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 transition-colors">INFO PPDB</a></li>
+                            <li><a href="https://ppd.semarangkota.go.id/sd" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 transition-colors">LINK PENDAFTARAN</a></li>
+                            <li><a href="https://sangjuara.semarangkota.go.id/kejuaraan_siswa" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 transition-colors">SANG JUARA</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Dropdown Kontak -->
+                    <li class="relative group">
+                        <button class="flex items-center py-2 px-4 text-gray-700 hover:text-blue-500 transition-colors">
+                            Kontak Kami 
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <ul class="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 -translate-y-2">
+                            <li><a href="/kontak" class="block py-2 px-4 text-gray-700 hover:text-blue-500 transition-colors">Kontak</a></li>
+                            <li><a href="/pengaduan" class="block py-2 px-4 text-gray-700 hover:text-blue-500 transition-colors">Pengaduan</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="{{ url('/admin/login') }}" class="block py-2 px-4 text-gray-700 hover:text-blue-500 transition-colors">
+                            Login Admin
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
         </div>
     </nav>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuButton = document.querySelector('#menu-button');
+            const menu = document.querySelector('#menu');
+            const menuIcon = document.querySelector('#menu-icon');
+            const closeIcon = document.querySelector('#close-icon');
+
+            // Toggle mobile menu
+            menuButton.addEventListener('click', function() {
+                const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+                menuButton.setAttribute('aria-expanded', !isExpanded);
+                menu.classList.toggle('hidden');
+                menuIcon.classList.toggle('hidden');
+                closeIcon.classList.toggle('hidden');
+            });
+
+            // Close menu when clicking outside on mobile
+            document.addEventListener('click', function(event) {
+                if (window.innerWidth < 768) {
+                    const isClickInside = menu.contains(event.target) || menuButton.contains(event.target);
+                    if (!isClickInside && !menu.classList.contains('hidden')) {
+                        menu.classList.add('hidden');
+                        menuButton.setAttribute('aria-expanded', 'false');
+                        menuIcon.classList.remove('hidden');
+                        closeIcon.classList.add('hidden');
+                    }
+                }
+            });
+
+            // Handle dropdowns on mobile
+            document.querySelectorAll('li.group').forEach(item => {
+                const button = item.querySelector('button');
+                const dropdown = item.querySelector('ul');
+
+                if (window.innerWidth < 768) {
+                    button.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        dropdown.classList.toggle('hidden');
+                        dropdown.classList.toggle('block');
+                    });
+                }
+            });
+
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth >= 768) {
+                    menu.classList.remove('hidden');
+                    menuButton.setAttribute('aria-expanded', 'false');
+                    menuIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                    
+                    // Hide all mobile dropdowns
+                    document.querySelectorAll('li.group ul').forEach(dropdown => {
+                        dropdown.classList.add('hidden');
+                        dropdown.classList.remove('block');
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
