@@ -9,10 +9,10 @@ class PrestasiController extends Controller
 {
     public function index()
     {
-        // Ambil 3 prestasi terbaru untuk highlight
+        // ambil prestasi terbaru untuk highlight
         $prestasiHighlight = Prestasi::latest()->take(3)->get();
         
-        // Hitung total prestasi per tingkat
+        // menghitung total prestasi pertingkat 
         $countByTingkat = Prestasi::selectRaw('tingkat, count(*) as total')
             ->groupBy('tingkat')
             ->pluck('total', 'tingkat');

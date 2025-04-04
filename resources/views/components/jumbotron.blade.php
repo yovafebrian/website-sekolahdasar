@@ -20,7 +20,7 @@
     ];
 @endphp
 
-<div class="mt-20">
+<div class="relative bg-white dark:bg-gray-800 overflow-hidden transition-colors duration-300">
     <div class="slider">
         @foreach($images as $index => $img)
             <div class="p-2">

@@ -36,10 +36,20 @@ class GuruKaryawanResource extends Resource
                 TextInput::make('nama')
                     ->required()
                     ->maxLength(255),
-
-                TextInput::make('jabatan')
-                    ->required()
-                    ->maxLength(255),
+                
+                Forms\Components\Select::make('jabatan')
+                    ->options([
+                        'Guru' => 'Guru',
+                        'Karyawan' => 'Karyawan',
+                        'Staff' => 'Staff',
+                        'Kepala Sekolah' => 'Kepala Sekolah',
+                        'Wakil Kepala Sekolah' => 'Wakil Kepala Sekolah',
+                        'Bendahara' => 'Bendahara',
+                        'Kepala Tata Usaha' => 'Kepala Tata Usaha',
+                        'Kepala Perpustakaan' => 'Kepala Perpustakaan',
+                        'Kepala Laboratorium' => 'Kepala Laboratorium',
+                    ]),
+                    
 
                 TextInput::make('email')
                     ->email()

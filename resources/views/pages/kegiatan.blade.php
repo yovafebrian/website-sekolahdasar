@@ -12,7 +12,7 @@
                         <h5 class="text-lg font-semibold text-gray-900">{{ $kegiatan->judul }}</h5>
                         <div class="mt-3 flex-grow flex items-end justify-center">
                             <button onclick="openModal('{{ asset('storage/' . $kegiatan->gambar) }}', '{{ $kegiatan->judul }}', '{{ $kegiatan->deskripsi }}')" 
-                                    class="px-4 py-2 bg-blue-500 text-white rounded text-sm hover:bg-blue-600 w-full">
+                                    class="px-4 py-2 bg-blue-500 text-white rounded text-sm hover:bg-blue-600 w-full cursor-pointer">
                                 Lihat Detail
                             </button>
                         </div>
@@ -22,9 +22,10 @@
         </div>
     </div>
 </section>
+
 <!-- Modal -->
 <div id="modal" class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center hidden px-4">
-    <div class="bg-white p-6 rounded-lg max-w-lg w-full text-center max-h-screen overflow-auto">
+    <div class="bg-white p-6 rounded-lg max-w-lg w-full text-center max-h-[80vh] overflow-auto">
         <h3 id="modal-title" class="text-xl font-bold"></h3>
         <img id="modal-img" src="" class="w-full my-4 rounded">
         <p id="modal-desc" class="text-gray-600"></p>
@@ -39,12 +40,19 @@
         document.getElementById('modal-desc').innerText = desc;
         document.getElementById('modal').classList.remove('hidden');
     }
+
     function closeModal() {
         document.getElementById('modal').classList.add('hidden');
     }
-</script>
 
-<script>
+    // Tutup modal saat klik di luar modal
+    document.getElementById('modal').addEventListener('click', function (event) {
+        if (event.target === this) {
+            closeModal();
+        }
+    });
+
+    // Animasi scroll reveal
     document.addEventListener("DOMContentLoaded", function () {
         const elements = document.querySelectorAll(".scroll-reveal");
 
