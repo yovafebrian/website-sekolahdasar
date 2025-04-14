@@ -21,7 +21,7 @@
                 <div class="lg:w-1/2 scroll-reveal opacity-0 translate-y-10 transition-all duration-700 ease-out">
                     <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-6">Tentang Sekolah Kami</h2>
                     <p class="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                        SMAN 1 Contoh Kota telah berdiri sejak tahun 1998 dan terus berkomitmen untuk memberikan pendidikan terbaik. 
+                        SDN PENDRIKAN LOR 03 telah berdiri sejak tahun 1957 dan terus berkomitmen untuk memberikan pendidikan terbaik. 
                         Dengan fasilitas modern dan tenaga pengajar berkualitas, kami membentuk generasi unggul yang siap menghadapi tantangan masa depan.
                     </p>
                     
@@ -40,7 +40,7 @@
                                 <i class="fas fa-chalkboard-teacher text-blue-600 dark:text-blue-400 text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-gray-800 dark:text-white mb-1">50+ Guru</h4>
+                                <h4 class="font-semibold text-gray-800 dark:text-white mb-1">{{ App\Models\GuruKaryawans::count() }}+ Guru</h4>
                                 <p class="text-gray-600 dark:text-gray-400 text-sm">Berkualitas</p>
                             </div>
                         </div>

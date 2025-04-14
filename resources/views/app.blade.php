@@ -19,7 +19,7 @@
 <body class="flex flex-col min-h-screen bg-gray-100 dark:bg-gray-900 transition-colors duration-300">
     @include('components.navbar')
 
-    <main class="flex-grow">
+    <main class="flex-grow ">
         @yield('content')
     </main>
 

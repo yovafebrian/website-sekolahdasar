@@ -2,8 +2,8 @@
 
 @section('content')
 <section class="mb-10 text-center opacity-0 transform translate-y-10 transition-all duration-1000 scroll-reveal">
-    <div class="container mx-auto px-4 py-8">
-        <h2 class="text-center text-2xl font-bold mb-20 text-blue-600 mt-12">Galeri Kegiatan</h2>
+    <div class="container mx-auto px-4 py-8 mt-9">
+        <h2 class="text-center text-2xl font-bold mb-20 text-blue-600 dark:text-white mt-12">Galeri Kegiatan</h2>
         <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
             @foreach($kegiatans as $kegiatan)
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl flex flex-col">

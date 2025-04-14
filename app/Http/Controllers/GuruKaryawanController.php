@@ -12,5 +12,12 @@ class GuruKaryawanController extends Controller
     {
         $guruKaryawans = GuruKaryawans::all();
         return view('pages.guru-karyawan', compact('guruKaryawans'));
+
+    }
+
+    public function countGuru()
+    {
+        $totalGuru = GuruKaryawans::count();
+        return $totalGuru;
     }
 }

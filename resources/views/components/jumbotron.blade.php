@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +8,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 </head>
-<body>
+<body> --}}
 
 @php
     $images = [
@@ -20,7 +20,7 @@
     ];
 @endphp
 
-<div class="relative bg-white dark:bg-gray-800 overflow-hidden transition-colors duration-300">
+<div class="relative bg-white dark:bg-gray-900 overflow-hidden transition-colors duration-300">
     <div class="slider">
         @foreach($images as $index => $img)
             <div class="p-2">
@@ -53,5 +53,5 @@
     });
 </script>
 
-</body>
-</html>
+{{-- </body>
+</html> --}}

@@ -1,8 +1,8 @@
 <footer class="bg-blue-700 dark:bg-gray-800 text-white dark:text-gray-300 py-6 mt-auto transition-colors duration-300">
     <div class="container mx-auto flex flex-col md:flex-row justify-between items-center px-10">
         <div class="text-center md:text-left">
-            <h2 class="text-xl font-bold">BuluStalanWebSite</h2>
-            <p class="text-sm text-gray-300 dark:text-gray-400">&copy; {{ date('Y') }} All Rights Reserved</p>
+            <h2 class="text-xl font-bold">SDN BULULOR 03 </h2>
+            <p class="text-sm text-gray-300 dark:text-gray-400">&copy; {{ date('Y') }} YFP</p>
         </div>
         <nav class="mt-4 md:mt-0">
             <ul class="flex space-x-6">
