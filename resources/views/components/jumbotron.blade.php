@@ -12,15 +12,15 @@
 
 @php
     $images = [
-        asset('images/profile.jpeg'),
-        asset('images/walkot.jpeg'),
-        asset('images/walikota2.png'),
+        asset('images/pendrikanlor03.png'),
+        asset('images/'),~
+        asset('images/'),
         asset('images/walikota.jpg'),
         asset('images/presiden.jpeg')
     ];
 @endphp
 
-<div class="relative bg-white dark:bg-gray-900 overflow-hidden transition-colors duration-300">
+<div class="relative mt-24 bg-gray-100 dark:bg-gray-900 overflow-hidden transition-colors duration-300">
     <div class="slider">
         @foreach($images as $index => $img)
             <div class="p-2">

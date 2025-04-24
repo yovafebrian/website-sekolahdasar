@@ -8,10 +8,10 @@
             SDN PENRIKAN LOR 03
         </a>
         
-        <!-- Right Side (Menu + Theme Toggle) -->
+        <!-- icon dark and light -->
         <div class="flex items-center space-x-4">
             <!-- Theme Toggle -->
-            <button onclick="toggleTheme()" class="theme-toggle p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+            <button onclick="toggleTheme()" class="theme-toggle p-2 rounded-full   text-gray-800 dark:text-gray-200 dark:bg-gray-900  transition-colors duration-300">
                 
             </button>
             

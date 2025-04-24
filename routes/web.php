@@ -5,6 +5,7 @@ use App\Http\Controllers\GuruKaryawanController;
 use App\Http\Controllers\KegiatanController;
 use App\Http\Controllers\PengaduanController;
 use App\Http\Controllers\PrestasiController;
+use App\Http\Controllers\TugasDaringController;
 
 Route::get('/', function () {
     return view('pages.home');
@@ -35,6 +36,7 @@ Route::get('/prestasi', function () {
     return view('pages.prestasi');
 });
 
+// Remove duplicate routes and fix conflicts
 Route::get('/guru-karyawan', [GuruKaryawanController::class, 'index']);
 Route::get('/kegiatan', [KegiatanController::class, 'index']);
 Route::get('/pengaduan', [PengaduanController::class, 'index'])->name('pengaduan.index');
@@ -42,3 +44,9 @@ Route::post('/pengaduan', [PengaduanController::class, 'store'])->name('pengadua
 Route::get('/profile', [PrestasiController::class, 'index'])->name('profile.index');
 Route::get('/prestasi', [PrestasiController::class, 'index'])->name('prestasi');
 Route::get('/prestasi/semua', [PrestasiController::class, 'semua'])->name('prestasi.semua');
+Route::get('/tugas-daring', [TugasDaringController::class, 'index']);
+
+
+Route::get('/tugas-daring', [TugasDaringController::class, 'index'])->name('tugas-daring.index');
+Route::get('/tugas-daring/kelas/{kelas}', [TugasDaringController::class, 'kelas'])->name('tugas-daring.kelas');
+Route::get('/tugas-daring/kelas/{kelas}/mapel/{mapel}', [TugasDaringController::class, 'mapel'])->name('tugas-daring.mapel');

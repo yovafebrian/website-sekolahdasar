@@ -3,7 +3,7 @@
 
 <div class="pt-35 px-6 dark:bg-gray-900">
     <!-- Jumbotron -->
-    <section class="mb-10 text-center opacity-0 transform translate-y-10 transition-all duration-1000 scroll-reveal dark:bg-gray-900 bg-white">
+    <section class=" mb-20 text-center opacity-0 transform translate-y-10 transition-all duration-1000 scroll-reveal dark:bg-gray-900 bg-white">
         @include('components.jumbotron')
     </section>
 
