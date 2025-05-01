@@ -56,54 +56,55 @@
     </section>
 
     <!-- Visi Misi -->
-    <section class="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16 scroll-reveal opacity-0 translate-y-10 transition-all duration-500 ease-out">
-                <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-4">Visi & Misi Sekolah</h2>
-                <div class="w-20 h-1 bg-blue-600 dark:bg-blue-500 mx-auto"></div>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- Visi -->
-                <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 scroll-reveal opacity-0 translate-y-10 transition-all duration-500 ease-out">
-                    <div class="text-blue-600 dark:text-blue-400 text-4xl mb-4">
-                        <i class="fas fa-eye"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">Visi Kami</h3>
-                    <p class="text-gray-600 dark:text-gray-300 italic mb-4">
-                        "Menjadi sekolah unggulan yang mencetak generasi berilmu, berkarakter, dan berdaya saing global pada tahun 2030."
+    @php
+        $visiMisi = \App\Models\VisiMisi::latest()->first();
+    @endphp
+
+@if($visiMisi)
+<section class="py-16 md:py-24 bg-gray-50 dark:bg-gray-900">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16 scroll-reveal opacity-0 translate-y-10 transition-all duration-500 ease-out">
+            <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-4">Visi & Misi Sekolah</h2>
+            <div class="w-20 h-1 bg-blue-600 dark:bg-blue-500 mx-auto"></div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <!-- Visi -->
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 scroll-reveal opacity-0 translate-y-10 ease-out">
+                <div class="text-blue-600 dark:text-blue-400 text-4xl mb-4">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">Visi Kami</h3>
+                <p class="text-gray-600 dark:text-gray-300 italic mb-4">
+                    "{{ $visiMisi->visi }}"
+                </p>
+                <div class="bg-blue-50 dark:bg-gray-700 p-4 rounded-lg">
+                    <p class="text-sm text-gray-700 dark:text-gray-300">
+                        Visi ini menjadi panduan bagi seluruh warga sekolah untuk mencapai keunggulan dalam pendidikan.
                     </p>
-                    <div class="bg-blue-50 dark:bg-gray-700 p-4 rounded-lg">
-                        <p class="text-sm text-gray-700 dark:text-gray-300">
-                            Visi ini menjadi panduan bagi seluruh warga sekolah untuk mencapai keunggulan dalam pendidikan.
-                        </p>
-                    </div>
                 </div>
-                
-                <!-- Misi -->
-                <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 scroll-reveal opacity-0 translate-y-10 transition-all duration-700 ease-out">
-                    <div class="text-blue-600 dark:text-blue-400 text-4xl mb-4">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">Misi Kami</h3>
-                    <ul class="space-y-3">
-                        <li class="flex items-start">
-                            <span class="bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-400 rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">1</span>
-                            <span class="text-gray-600 dark:text-gray-300">Menyelenggarakan pembelajaran inovatif berbasis teknologi</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-400 rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">2</span>
-                            <span class="text-gray-600 dark:text-gray-300">Mengembangkan potensi peserta didik secara holistik</span>
-                        </li>
-                        <li class="flex items-start">
-                            <span class="bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-400 rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">3</span>
-                            <span class="text-gray-600 dark:text-gray-300">Menanamkan nilai-nilai karakter bangsa dan religiusitas</span>
-                        </li>
-                    </ul>
+            </div>
+
+            <!-- Misi -->
+            <div class="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-500 scroll-reveal opacity-0 translate-y-10 ease-out">
+                <div class="text-blue-600 dark:text-blue-400 text-4xl mb-4">
+                    <i class="fas fa-bullseye"></i>
                 </div>
+                <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-4">Misi Kami</h3>
+                <ul class="space-y-3">
+                    @foreach($visiMisi->misi as $index => $misi)
+                        <li class="flex items-start">
+                            <span class="bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-400 rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1 flex-shrink-0">{{ $index + 1 }}</span>
+                            <span class="text-gray-600 dark:text-gray-300">{{ $misi['item'] }}</span>
+                        </li>
+                    @endforeach
+                </ul>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+@endif
+
 
     <!-- Fasilitas -->
     <section class="py-16 md:py-24 bg-white dark:bg-gray-800">

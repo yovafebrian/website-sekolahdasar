@@ -11,12 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tugas_darings', function (Blueprint $table) {
+        Schema::create('sambutan_kepala_sekolahs', function (Blueprint $table) {
             $table->id();
-            $table->integer('grade'); // kelas 1-6
-            $table->string('subject'); // nama mata pelajaran
-            $table->string('title'); // judul materi
-            $table->string('youtube_link'); // link youtube
+            $table->string('image_path');
+            $table->text('content');
             $table->timestamps();
         });
     }
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tugas_darings');
+        Schema::dropIfExists('sambutan_kepala_sekolahs');
     }
 };

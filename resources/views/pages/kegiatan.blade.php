@@ -52,7 +52,7 @@
         }
     });
 
-    // Animasi scroll reveal
+    
     document.addEventListener("DOMContentLoaded", function () {
         const elements = document.querySelectorAll(".scroll-reveal");
 

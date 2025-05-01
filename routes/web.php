@@ -17,9 +17,11 @@ Route::get('/profile', function () {
     return view('pages.profile');
 });
 
+
 Route::get('/tugas-daring', function () {
     return view('pages.tugas-daring');
 });
+
 
 Route::get('/guru-karyawan', function () {
     return view('pages.guru-karyawan');

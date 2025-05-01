@@ -1,8 +1,8 @@
 @extends('app')
 
 @section('content')
-<div class="container mx-auto py-8 px-4">
-    <h2 class="text-2xl font-bold mb-4 dark:text-white">Kelas {{ $kelas }} - {{ $mapel }}</h2>
+<div class="container mx-auto py-8 px-4 mt-20 dark:bg-gray-900 transition-colors duration-300">
+    <h2 class="text-2xl font-bold mb-4  dark:text-white">Kelas {{ $kelas }} - {{ $mapel }}</h2>
 
     <ul class="space-y-3">
         @forelse($videos as $video)

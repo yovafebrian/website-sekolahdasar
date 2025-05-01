@@ -1,5 +1,5 @@
 <div class="container mx-auto mt-10 p-4 dark:bg-gray-900 transition-colors duration-300">
-    <h2 class="text-center text-3xl font-bold text-blue-600 dark:text-white  mb-6">Foto Kegiatan Terbaru</h2>
+    <h2 class="text-center text-3xl font-bold text-blue-600 dark:text-white  mb-6">Berita Kegiatan Terbaru</h2>
     <div class="image-slider">
         @php
             use App\Models\Kegiatan;

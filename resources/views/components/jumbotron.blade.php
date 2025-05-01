@@ -1,24 +1,8 @@
-{{-- <!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Jumbotron</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-</head>
-<body> --}}
 
 @php
-    $images = [
-        asset('images/pendrikanlor03.png'),
-        asset('images/'),~
-        asset('images/'),
-        asset('images/walikota.jpg'),
-        asset('images/presiden.jpeg')
-    ];
+    $images = \App\Models\Slider::all()->pluck('image_path')->map(fn($path) => asset('storage/' . $path));
 @endphp
+
 
 <div class="relative mt-24 bg-gray-100 dark:bg-gray-900 overflow-hidden transition-colors duration-300">
     <div class="slider">
@@ -52,6 +36,3 @@
         });
     });
 </script>
-
-{{-- </body>
-</html> --}}
